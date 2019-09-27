@@ -1,0 +1,9 @@
+[0m[[0m[0mdebug[0m] [0m[0mAcquiring lock on file /home/rruss/Scala/Project/project/target/.sbt-compilation-infos/project-compile/.sbt-idea-lock ...[0m
+[0m[[0m[31merror[0m] [0m[0m/home/rruss/Scala/Project/src/main/scala/lab3/ShapingUp/task3/Circle.scala:3:43: illegal inheritance from sealed trait Shape[0m
+[0m[[0m[31merror[0m] [0m[0mcase class Circle(radius: Double) extends Shape{[0m
+[0m[[0m[31merror[0m] [0m[0m                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/rruss/Scala/Project/src/main/scala/lab3/ShapingUp/task3/Rectangular.scala:3:27: illegal inheritance from sealed trait Shape[0m
+[0m[[0m[31merror[0m] [0m[0mtrait Rectangular extends Shape {[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[0mdebug[0m] [0m[0mReleasing lock on file /home/rruss/Scala/Project/project/target/.sbt-compilation-infos/project-compile/.sbt-idea-lock.[0m
