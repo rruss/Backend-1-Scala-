@@ -39,7 +39,7 @@ object main extends App {
     //tasks --------------------------------------------------------------------------------------
 
   def directorsWithMoreFilms(numberOfFilms: Int): Unit = {
-    println(directors.filter(d => d.films.length > numberOfFilms))
+    println(directors.filter(director => director.films.length > numberOfFilms))
   }
   def findDirectorsBornEarly(year: Int): Unit = {
     println(directors.find(director => director.yearOfBirth < year))
@@ -63,27 +63,26 @@ object main extends App {
 
   def averageRating() : Double = {
     val films: Seq[Film] = directors.flatten(director => director.films)
-    val sum: Double = films.foldLeft(0.0)((sum, film) => sum + film.imdbRating)
+    val sum: Double = films.foldRight(0.0)((film, sum) => sum + film.imdbRating)
     sum / films.size
   }
   def tonightListings =  directors.foreach(d => d.films.foreach(
     f => println(s"Tonight only! ${f.name} by ${d.firstName} !")))
-  def fromArchives(): Option[Film] = {
-    val sorted = directors.flatten(d => d.films).sortWith(
-      (f1, f2) => (f1.yearOfRelease) < f2.yearOfRelease)
-    sorted.headOption
+  def fromArchives(): Seq[Film] = {
+    val sorted = directors.flatten(d => d.films).sortWith((f1, f2) => (f1.yearOfRelease) < f2.yearOfRelease)
+    sorted
   }
 
-  directorsWithMoreFilms(4)
-  (findDirectorsBornEarly(2000))
-  (moreFilmsBornEarly(2, 1990))
-  (sortDirectorsByAge(true))
-  println(nolanFilms)
-  println(cinephile)
-  println(vintageMcTiernan)
-  println(highScoreTable)
+//  directorsWithMoreFilms(4)
+//  (findDirectorsBornEarly(2000))
+//  (moreFilmsBornEarly(2, 1990))
+//  (sortDirectorsByAge(true))
+//  println(nolanFilms)
+//  println(cinephile)
+//  println(vintageMcTiernan)
+//  println(highScoreTable)
   println(averageRating())
-  (tonightListings)
+//  (tonightListings)
   println(fromArchives())
 
 }
