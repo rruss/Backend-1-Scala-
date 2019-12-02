@@ -22,7 +22,7 @@ object Boot2 extends App with Serializer {
   val log = LoggerFactory.getLogger("Boot")
 
 
-  val token = "830958142:AAEoBbyilh8scXkzGAJWsN8qjluCXyqAJLU" // config.getString("telegram.token") // token
+  val token = "token" // config.getString("telegram.token") // token
   log.info(s"Token: $token")
 
 
