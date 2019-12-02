@@ -29,7 +29,7 @@ object Boot extends App with SprayJsonSerializer with Serializer {
   val config: Config = ConfigFactory.load() // config
   val log = LoggerFactory.getLogger("Boot")
 
-  val token = "830958142:AAEoBbyilh8scXkzGAJWsN8qjluCXyqAJLU" // config.getString("telegram.token") // token
+  val token = "token" // config.getString("telegram.token") // token
   log.info(s"Token: $token")
 
   implicit val timeout: Timeout = Timeout(10.seconds)
